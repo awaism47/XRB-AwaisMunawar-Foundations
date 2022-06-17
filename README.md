@@ -11,15 +11,15 @@ A simple project to prepare you to use Git. This Readme file will serve as the f
 
 Q: What is your name?
 
-A: 
+A: Awais Munawar
 
 Q: Where are you from?
 
-A: 
+A: Glasgow,Scotland
 
 Q: What are you hoping to learn from this course?
 
-A: 
+A: How to build VR app, good methods to build test driven approach with unity apps, how to collaborate and best methods of deploying apps for end-users
 
 
 
