@@ -36,6 +36,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "4bfbb998-80e9-4897-a8a7-1de2843fd705",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -212,6 +220,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Sprint(removed)",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6a45e85-413d-407a-b6b0-1f7d1fc085f4",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
