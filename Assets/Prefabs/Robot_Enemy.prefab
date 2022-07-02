@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5434558934432184309}
   - component: {fileID: 5434558934432184308}
   - component: {fileID: 5434558934432184310}
+  - component: {fileID: 407690349}
+  - component: {fileID: 407690355}
   m_Layer: 0
   m_Name: Robot_Enemy
   m_TagString: Untagged
@@ -71,8 +73,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 5434558934432184299}
-  _threshold: 0.5
+  _threshold: 1
+  _waitTime: 2
   _patrolRoute: {fileID: 0}
+  _fov: {fileID: 407690355}
+  _state: 0
 --- !u!114 &5434558934432184309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +120,40 @@ CapsuleCollider:
   m_Height: 1.79
   m_Direction: 1
   m_Center: {x: 0, y: 0.91, z: 0}
+--- !u!114 &407690349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5434558934432184296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa574636502eb9409d7e031380f373f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  head: {fileID: 9190197169262902859}
+--- !u!114 &407690355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5434558934432184296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f45006899374f74cacd6d84ea8ab40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visibleObjects: []
+  _gizmoColor: {r: 1, g: 0, b: 0, a: 1}
+  _viewRadius: 6
+  _viewAngle: 30
+  _creature: {fileID: 407690349}
+  _blockingLayers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &5434558934884501346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,5 +238,10 @@ PrefabInstance:
 --- !u!4 &5539946458373562505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 39180eb77ec43314b99dd9657d37ef09, type: 3}
+  m_PrefabInstance: {fileID: 5434558934884501346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9190197169262902859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5412960421705385687, guid: 39180eb77ec43314b99dd9657d37ef09, type: 3}
   m_PrefabInstance: {fileID: 5434558934884501346}
   m_PrefabAsset: {fileID: 0}
