@@ -16,7 +16,7 @@ public class PatrolRoute : MonoBehaviour
     //Serialising enum to allow for drop down
     [SerializeField] public PatrolType patrolType;
     [SerializeField] public List<Transform> route;
-    [SerializeField] private Color _patrolRouteColor;
+    [SerializeField] private Color _patrolRouteColor=Color.green;
 
     
     [Button("Add Patrol Point")]
@@ -41,13 +41,6 @@ public class PatrolRoute : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        #if UNITY_EDITOR
-        Handles.Label(transform.position,gameObject.name);
-        #endif
-    }
-
-    private void OnDrawGizmosSelected()
-    {
         Gizmos.color = _patrolRouteColor;
         
         for (int i = 0; i < route.Count - 1; i++)
@@ -59,7 +52,8 @@ public class PatrolRoute : MonoBehaviour
         {
             Gizmos.DrawLine(route[route.Count-1].position,route[0].position);
         }
-       
-
+        #if UNITY_EDITOR
+        Handles.Label(transform.position,gameObject.name);
+        #endif
     }
 }
