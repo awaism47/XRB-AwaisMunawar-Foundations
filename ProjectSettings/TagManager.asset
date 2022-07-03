@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Grabbable
+  - Stickable
+  - Enemy
   layers:
   - Default
   - TransparentFX
