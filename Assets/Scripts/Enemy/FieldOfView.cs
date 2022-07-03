@@ -34,6 +34,7 @@ public class FieldOfView : MonoBehaviour
             //Dont fully understand lines below
             if (_creature.team == targetCreature.team) continue;
             
+            
             Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
             
             if (Vector3.Angle(transform.forward, directionToTarget)<_viewAngle)

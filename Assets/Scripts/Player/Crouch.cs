@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Crouch : MonoBehaviour
 {
-    [SerializeField] private CharacterController _charController;
+    [SerializeField] public CharacterController _charController;
     [SerializeField] private float _crouchHeight = 1;
+    [SerializeField] public Transform _cameraPosition;
 
     private float _originalHeight;
     private bool _crouched = false;
@@ -13,7 +14,7 @@ public class Crouch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _originalHeight = _charController.height;
+        _charController.transform.position = _cameraPosition.position;
     }
 
     // Update is called once per frame
@@ -38,6 +39,12 @@ public class Crouch : MonoBehaviour
 
         }
 
+    }
+
+    public void GoInBox()
+    {
+        _charController.height = _crouchHeight;
+        
     }
 
     

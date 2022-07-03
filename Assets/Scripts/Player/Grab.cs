@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Grab : MonoBehaviour
 {
@@ -11,53 +13,38 @@ public class Grab : MonoBehaviour
     [SerializeField] private float _throwForce = 20f;
     [SerializeField] private float _snapSpeed = 30f;
     
-    private Rigidbody _grabbedObject;
-    private bool _grabPressed = false;
+    [SerializeField] private GameObject _grabbedObject;
+    [SerializeField] public CharacterController _charController;
+
+
+    private Crouch _crouch;
+    [SerializeField] private GameObject boxCanvas;
+    
+
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (_grabbedObject)
-        {
-            _grabbedObject.velocity = (_holdPosition.position - _grabbedObject.transform.position)*_snapSpeed;
-        }
-    }
+   
 
     private void OnGrab()
     {
-        if (_grabPressed)
+        boxCanvas.SetActive(false);
+       
+     
+        Debug.Log("Grab pressed");
+        if (Physics.Raycast(_cameraPosition.position, _cameraPosition.forward,out RaycastHit hit,_grabRange))
         {
-            _grabPressed = false;
-            Debug.Log("Grab release");
-            if(!_grabbedObject) return;
-            DropGrabbedObject();
-        }
-        else
-        {
-            _grabPressed = true;
-            Debug.Log("Grab pressed");
-            if (Physics.Raycast(_cameraPosition.position, _cameraPosition.forward,out RaycastHit hit,_grabRange))
-            {
-                if(!hit.transform.gameObject.CompareTag("Grabbable")) return;
-                _grabbedObject = hit.transform.GetComponent<Rigidbody>();
-                _grabbedObject.transform.parent = _holdPosition;
-            }
-            
+           if(!hit.transform.gameObject.CompareTag("Box")) return;
+           
+            boxCanvas.SetActive(true);
+            transform.tag = "Box";
+            _charController.transform.position = _cameraPosition.position;
+            _charController.height = 0.5f;
+            _grabbedObject = hit.rigidbody.gameObject;
+            _grabbedObject.transform.parent = transform.parent;
+            _grabbedObject.SetActive(false);
             
         }
-    }
-
-    private void DropGrabbedObject()
-    {
-        _grabbedObject.transform.parent = null;
-        _grabbedObject = null;
-    }
-
-    private void OnThrow()
-    {
-        if(!_grabbedObject) return;
-        
-        _grabbedObject.AddForce(_cameraPosition.forward*_throwForce,ForceMode.Impulse);
-        DropGrabbedObject();
+            
+            
         
     }
 }
