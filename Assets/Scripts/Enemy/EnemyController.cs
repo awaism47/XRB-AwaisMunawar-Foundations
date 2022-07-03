@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,13 @@ using UnityEngine.Serialization;
 
 public class EnemyController : MonoBehaviour
 {
-    enum EnemyState
+    public enum EnemyState
     {
         Patrol=0,
-        Investigate=1
+        Investigate=1,
+        Waiting=3,
+    
+
     }
     
     [SerializeField] private NavMeshAgent _agent;
@@ -17,8 +21,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float _waitTime = 2f;
     [SerializeField] private PatrolRoute _patrolRoute;
     [SerializeField] private FieldOfView _fov;
-    [SerializeField] private EnemyState _state = EnemyState.Patrol;
-    
+    [SerializeField] public EnemyState _state = EnemyState.Waiting;
+
     private Transform _currentPoint;
     private bool _moving = false;
     //Need to create integer to allow us to loop through each point on each frame
@@ -40,22 +44,23 @@ public class EnemyController : MonoBehaviour
         {
             InvestigatePoint(_fov.visibleObjects[0].position);
         }
-        if (_state == EnemyState.Patrol)
-        {
-            UpdatePatrol();
-        }
         else if(_state==EnemyState.Investigate)
         {
             UpdateInvestigate();
         }
+
         
     }
 
     public void InvestigatePoint(Vector3 investigationPoint)
     {
-        _state = EnemyState.Investigate;
-        _investigationPoint = investigationPoint;
-        _agent.SetDestination(_investigationPoint);
+        
+            //If im robot 2 then i get the first person then investigate point together
+            _state = EnemyState.Investigate;
+            _investigationPoint = investigationPoint;
+            _agent.SetDestination(_investigationPoint);
+        
+        
     }
 
     private void UpdateInvestigate()
@@ -69,7 +74,7 @@ public class EnemyController : MonoBehaviour
             }
 
         }
-        //Debug.Log("In Investigate Mode");
+        
     }
 
     private void ReturnToPatrol()
@@ -130,4 +135,7 @@ public class EnemyController : MonoBehaviour
 
         _currentPoint = _patrolRoute.route[_routeIndex];
     }
+
+
+    
 }
