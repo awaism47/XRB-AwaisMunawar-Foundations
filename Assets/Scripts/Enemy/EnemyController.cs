@@ -9,7 +9,8 @@ public class EnemyController : MonoBehaviour
     enum EnemyState
     {
         Patrol=0,
-        Investigate=1
+        Investigate=1,
+        stop=3
     }
     
     [SerializeField] private NavMeshAgent _agent;
@@ -129,5 +130,10 @@ public class EnemyController : MonoBehaviour
         }
 
         _currentPoint = _patrolRoute.route[_routeIndex];
+    }
+
+    public void Stop()
+    {
+        _state = EnemyState.stop;
     }
 }

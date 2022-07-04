@@ -7,7 +7,7 @@ public class Creature : MonoBehaviour
     public enum Team
     {
         Player=0,
-        Enemy=1
+        Enemy=16
     }
     public Team team;
     public Transform head;

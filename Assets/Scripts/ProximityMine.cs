@@ -9,6 +9,7 @@ public class ProximityMine : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private GameObject _enemy;
     
     [SerializeField] private float mineRadius = 2f;
     // Start is called before the first frame update
@@ -52,11 +53,26 @@ public class ProximityMine : MonoBehaviour
 
     private void ExplosionActivated(Collider collider)
     {
+        
         _particleSystem.transform.position = transform.position;
         _particleSystem.gameObject.SetActive(true);
         _particleSystem.Play();
+        Rigidbody[] _enemyRigidbodies = _enemy.GetComponentsInChildren<Rigidbody>();
         
-        Destroy(collider.gameObject);
+        EnemyController _controller =_enemy.GetComponent<EnemyController>();
+        _controller.Stop();
+        
+
+        foreach (Rigidbody i in _enemyRigidbodies)
+        {
+            i.isKinematic = false;
+            i.mass=100f;
+            i.drag = 10f;
+            
+        }
+
+
+        //Destroy(collider.gameObject);
         Destroy(transform.gameObject);
 
 
