@@ -27,11 +27,19 @@ public class EnemyController : MonoBehaviour
     private bool _movingForward = true;
     private Vector3 _investigationPoint;
     private float _waitTimer = 0f;
+    private Rigidbody[] _rigidbody;
     
     // Start is called before the first frame update
     void Start()
     {
         _currentPoint = _patrolRoute.route[_routeIndex];
+        _rigidbody = transform.GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody i in _rigidbody)
+        {
+            i.isKinematic = true;
+            
+        }
+        
     }
 
     // Update is called once per frame

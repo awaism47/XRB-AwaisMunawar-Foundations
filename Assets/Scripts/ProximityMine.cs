@@ -40,7 +40,7 @@ public class ProximityMine : MonoBehaviour
         if (_rigidbody.velocity.magnitude > 15f && collision.gameObject.CompareTag("Stickable"))
         {
             _rigidbody.isKinematic = true;
-            transform.up = collision.transform.right;
+            transform.up = collision.contacts[0].normal;
             
             transform.SetParent(collision.transform);
            
@@ -58,6 +58,7 @@ public class ProximityMine : MonoBehaviour
         _particleSystem.gameObject.SetActive(true);
         _particleSystem.Play();
         Rigidbody[] _enemyRigidbodies = _enemy.GetComponentsInChildren<Rigidbody>();
+
         
         EnemyController _controller =_enemy.GetComponent<EnemyController>();
         _controller.Stop();
@@ -66,13 +67,12 @@ public class ProximityMine : MonoBehaviour
         foreach (Rigidbody i in _enemyRigidbodies)
         {
             i.isKinematic = false;
-            i.mass=100f;
-            i.drag = 10f;
-            
+            Destroy(i);
+
+
+
         }
 
-
-        //Destroy(collider.gameObject);
         Destroy(transform.gameObject);
 
 
