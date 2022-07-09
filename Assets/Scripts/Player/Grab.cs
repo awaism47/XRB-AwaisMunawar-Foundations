@@ -8,7 +8,7 @@ public class Grab : MonoBehaviour
     [SerializeField] private Transform _cameraPosition;
     [SerializeField] private Transform _holdPosition;
     [SerializeField] private float _grabRange = 3f;
-    [SerializeField] private float _throwForce = 30f;
+    [SerializeField] private float _throwForce = 40f;
     [SerializeField] private float _snapSpeed = 15f;
     
     private Rigidbody _grabbedObject;
