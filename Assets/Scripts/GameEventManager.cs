@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -18,11 +19,14 @@ public class GameEventManager : MonoBehaviour
     [SerializeField] private AudioSource _bgmSource;
 
     [SerializeField] private AudioClip _caughtMusic;
+    [SerializeField] private AudioClip _successMusic;
     
     private PlayerInput _playerInput;
     private FirstPersonController _fpController;
     private bool _isFadingIn = false;
     private float _fadeLevel = 0;
+
+    private bool _isGoalReached = false;
     
     
     
@@ -35,7 +39,9 @@ public class GameEventManager : MonoBehaviour
             enemy.onInvestigate.AddListener(EnemyInvestigating);
             enemy.onPlayerFound.AddListener(PlayerFound);
             enemy.onReturnToPatrol.AddListener(EnemyReturnToPatrol);
+            
         }
+        
 
         GameObject player = GameObject.FindWithTag("Player");
         if (player)
@@ -50,6 +56,8 @@ public class GameEventManager : MonoBehaviour
         }
 
         _canvasGroup.alpha = 0;
+        _successPanel.SetActive(false);
+        _failedPanel.SetActive(false);
 
 
 
@@ -62,10 +70,22 @@ public class GameEventManager : MonoBehaviour
 
     private void PlayerFound(Transform enemyThatFoundPlayer)
     {
+        if (_isGoalReached) return;
         _isFadingIn = true;
+        _failedPanel.SetActive(true);
         _fpController.CinemachineCameraTarget.transform.LookAt(enemyThatFoundPlayer);
         DeactivateInput();
         PlayBGM(_caughtMusic);
+    }
+
+    public void GoalReached()
+    {
+        _isFadingIn = true;
+        _successPanel.SetActive(true);
+        _isGoalReached = true;
+        DeactivateInput();
+        PlayBGM(_successMusic);
+        
     }
 
     private void DeactivateInput()
@@ -91,12 +111,15 @@ public class GameEventManager : MonoBehaviour
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         _isFadingIn = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (_isFadingIn)
         {
             if (_fadeLevel < 1f)
