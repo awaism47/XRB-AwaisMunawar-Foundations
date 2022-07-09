@@ -8,8 +8,8 @@ public class Grab : MonoBehaviour
     [SerializeField] private Transform _cameraPosition;
     [SerializeField] private Transform _holdPosition;
     [SerializeField] private float _grabRange = 3f;
-    [SerializeField] private float _throwForce = 20f;
-    [SerializeField] private float _snapSpeed = 30f;
+    [SerializeField] private float _throwForce = 30f;
+    [SerializeField] private float _snapSpeed = 15f;
     
     private Rigidbody _grabbedObject;
     private bool _grabPressed = false;
@@ -27,19 +27,20 @@ public class Grab : MonoBehaviour
         if (_grabPressed)
         {
             _grabPressed = false;
-            Debug.Log("Grab release");
+           
             if(!_grabbedObject) return;
             DropGrabbedObject();
         }
         else
         {
             _grabPressed = true;
-            Debug.Log("Grab pressed");
+            
             if (Physics.Raycast(_cameraPosition.position, _cameraPosition.forward,out RaycastHit hit,_grabRange))
             {
                 if(!hit.transform.gameObject.CompareTag("Grabbable")) return;
                 _grabbedObject = hit.transform.GetComponent<Rigidbody>();
                 _grabbedObject.transform.parent = _holdPosition;
+                _grabbedObject.rotation = _holdPosition.rotation;
             }
             
             
@@ -58,6 +59,8 @@ public class Grab : MonoBehaviour
         
         _grabbedObject.AddForce(_cameraPosition.forward*_throwForce,ForceMode.Impulse);
         DropGrabbedObject();
+
+        
         
     }
 }
