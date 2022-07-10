@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -10,6 +11,9 @@ public class ProximityMine : MonoBehaviour
     private Rigidbody _rigidbody;
     [SerializeField] private ParticleSystem _particleSystem;
     private GameObject _enemy;
+    private List<GameObject> _bodyPieces;
+    [SerializeField] private float _explosionForce = 4f;
+    [SerializeField] private GameObject _body;
     
     [SerializeField] private float mineRadius = 2f;
     // Start is called before the first frame update
@@ -57,28 +61,15 @@ public class ProximityMine : MonoBehaviour
         _particleSystem.transform.position = transform.position;
         _particleSystem.gameObject.SetActive(true);
         _particleSystem.Play();
-        Rigidbody[] _enemyRigidbodies = _enemy.GetComponentsInChildren<Rigidbody>();
-        _enemy.GetComponent<CapsuleCollider>().enabled = false;
-        Collider[] _enemyColliders = _enemy.GetComponentsInChildren<Collider>();
-
-        EnemyController _controller =_enemy.GetComponent<EnemyController>();
-        _controller.Stop();
         
-
-        foreach (Rigidbody i in _enemyRigidbodies)
+        collider.gameObject.SetActive(false);
+        _body.SetActive(true);
+        Rigidbody[] _bodyRigidbody = _body.GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody i in _bodyRigidbody)
         {
-            i.isKinematic = false;
-           // Destroy(i);
-
-
-
+            i.AddExplosionForce(_explosionForce,transform.position,mineRadius);
+            i.gameObject.transform.position = collider.transform.position;
         }
-        foreach (Collider i in _enemyColliders)
-        {
-            i.enabled = false;
-        }
-
-        Destroy(transform.gameObject);
 
 
     }
