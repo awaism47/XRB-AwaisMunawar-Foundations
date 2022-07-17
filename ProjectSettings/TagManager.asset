@@ -8,6 +8,7 @@ TagManager:
   - Grabbable
   - Stickable
   - Enemy
+  - KeyCard
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - Obstacles
   - MiniMap
-  - 
-  - 
+  - Player
+  - Grab
   - 
   - 
   - 
