@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407756143175283764}
   - component: {fileID: 4060915821664766569}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:MiddleFinger1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4644073656138928136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:MiddleFinger4_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5981438243727410008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Geometry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 835454773685947790}
   - component: {fileID: 6284890577163704232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:RingFinger3_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7749052781578329419}
   - component: {fileID: 3693854368359462207}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:MiddleFinger3_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3291146472190478333}
   - component: {fileID: 8884665916546899335}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714769081694926152}
   - component: {fileID: 1231248314209951650}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:ThumbFinger3_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889766936172337115}
   - component: {fileID: 5219420740197874742}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:PinkyFinger3_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6914183858439018091}
   - component: {fileID: 2762475160966263654}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:Wrist_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5757686050666979201}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:RingFinger4_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5427369809686699334}
   - component: {fileID: 180505714057547755}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:IndexFinger2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3008572646018157299}
   - component: {fileID: 494276263838236881}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HandMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 14691629832422793}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HandOffset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2676751474274345482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:PinkyFinger4_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6662842307203665536}
   - component: {fileID: 5105441286723761082}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:ThumbFinger1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3228851793870632365}
   - component: {fileID: 6113707862607323580}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:RingFinger1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785425349837729040}
   - component: {fileID: 4700456844280665486}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:PinkyFinger1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5614235359122448370}
   - component: {fileID: 2558455693866257500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:RingFinger2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3996343073294953897}
   - component: {fileID: 8132198252220110123}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:IndexFinger3_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5236015834843528159}
   - component: {fileID: 2671468984067931084}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:PinkyFinger2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3475075199900073961}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:IndexFinger4_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650355213673598787}
   - component: {fileID: 6150177719479238961}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:MiddleFinger2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -990,7 +990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848754140351691488}
   - component: {fileID: 2102176786821166703}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:ThumbFinger2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5398618145389801670}
   - component: {fileID: 9074578573900654474}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:IndexFinger1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1081,7 +1081,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3690711979637581345}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot_XRB01_001_0011:ThumbFinger4_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
