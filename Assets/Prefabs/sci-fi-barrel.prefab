@@ -77,7 +77,7 @@ Transform:
   m_GameObject: {fileID: 7003700393247821743}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalScale: {x: 30, y: 10, z: 50}
   m_Children:
   - {fileID: 4925213962963992753}
   - {fileID: 6002991999124061999}
@@ -315,7 +315,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb04382e06356bb409916eebc12c4123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentState: 1
+  _currentState: 3
+  _numberOfCansStanding: 0
+  canFellOver:
+    m_PersistentCalls:
+      m_Calls: []
+  smoothing: 4
+  distanceMove: 0.05
+  leftPoint: {fileID: 0}
+  RightPoint: {fileID: 0}
+  MiddlePoint: {fileID: 0}
+  _originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  _currentPosition: {x: 0, y: 0, z: 0}
+  _currentRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &1674917858357641445
 PrefabInstance:
   m_ObjectHideFlags: 0

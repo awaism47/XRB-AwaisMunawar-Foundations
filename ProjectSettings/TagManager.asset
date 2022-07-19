@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - KeyCard
   - can
+  - bullet
   layers:
   - Default
   - TransparentFX

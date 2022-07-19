@@ -7,14 +7,13 @@ using UnityEngine;
 public class XRUi : MonoBehaviour
 {
     private TextMeshProUGUI text;
-    public int NumberOfCans=6;
-    public int NumberOfThrows = 3;
+    public int OnTarget = 0;
     [SerializeField] private GameObject _sign;
     private void Start()
     {
         _sign = transform.gameObject;
         text = _sign.GetComponent<TextMeshProUGUI>();
-        text.text = "Can Toss!";
+        text.text = "Can Shoot!";
     }
 
     private void Update()
@@ -26,30 +25,14 @@ public class XRUi : MonoBehaviour
     public void ChangeText()
     {
 
-        if (NumberOfCans == 6 && NumberOfThrows>1)
-        {
-            text.text = "Can Toss!";
-            
-        }
-        else if (NumberOfCans<1)
-        {
-            text.fontSize = 26;
-            text.text = "Congratulation you Won!";
-        }
-        else if(NumberOfCans>=1 && NumberOfThrows<1)
-        {
-            text.text = "Sorry you Lost!";
-        }
+        text.text = "Score: " + OnTarget;
     }
 
     public void CanFellOver()
     {
-        NumberOfCans--;
+        OnTarget++;
     }
 
-    public void ThrowCount()
-    {
-        NumberOfThrows--;
-    }
+
     
 }

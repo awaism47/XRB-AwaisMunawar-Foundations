@@ -9,13 +9,20 @@ public class TinCans : MonoBehaviour
     public enum canState
     {
         standing=1,
-        falling=0
+        falling=0,
+        movingRight=3,
+        MovingLeft=4
         
     }
     
-    public canState _currentState = canState.standing;
+    public canState _currentState = canState.movingRight;
     public int _numberOfCansStanding = 0;
     public UnityEvent canFellOver;
+    public float smoothing = 4f;
+    public float distanceMove = 0.05f;
+    [SerializeField] private Transform leftPoint;
+    [SerializeField] private Transform RightPoint;
+    [SerializeField] private Transform MiddlePoint;
 
     public Quaternion _originalRotation;
     public Vector3 _currentPosition;
@@ -23,37 +30,36 @@ public class TinCans : MonoBehaviour
      
     void Start ()
     {
-        
-        _originalRotation = transform.rotation;
+        _currentState = canState.movingRight;
+    
+
     }
+
+    
 
     private void Update()
     {
         if (_currentState == canState.falling) return;
         _currentRotation = transform.rotation;
+        
        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Grabbable"))
+        if (collision.transform.CompareTag("bullet"))
         {
+            canFellOver.Invoke();
             
-            CheckIfFell();
+            fall();
         }
         
     }
 
-    private void CheckIfFell()
+    private void fall()
     {
-        if (transform.rotation != _originalRotation)
-        {
-            if (_currentState == canState.falling) return;
-            Debug.Log("Can fell over");
-            canFellOver.Invoke();
-            
-            
-            _currentState = canState.falling;
-        }
+        transform.parent = null;
+        transform.Rotate(10.0f, 0.0f, 0.0f, Space.Self);
+        //transform.rotation.z=
     }
 }

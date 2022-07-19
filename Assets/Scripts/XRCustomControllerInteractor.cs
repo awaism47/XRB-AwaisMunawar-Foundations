@@ -10,6 +10,7 @@ public class XRCustomControllerInteractor : MonoBehaviour
 {
     public UnityEvent fallingCan = new UnityEvent();
     private XRBaseControllerInteractor _controller;
+    
 
 
     private void Start()
@@ -31,6 +32,7 @@ public class XRCustomControllerInteractor : MonoBehaviour
     {
         arg0.interactableObject.transform.parent = transform;
     }
+    
 
  
 }
