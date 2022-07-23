@@ -209,6 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3291146472190478333}
   - component: {fileID: 8884665916546899335}
+  - component: {fileID: 4974374999406792048}
   m_Layer: 10
   m_Name: RightHand
   m_TagString: Untagged
@@ -250,6 +251,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &4974374999406792048
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803298267067178311}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2887609037170062735
 GameObject:
   m_ObjectHideFlags: 0
