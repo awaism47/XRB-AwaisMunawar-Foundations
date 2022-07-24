@@ -22,6 +22,7 @@ namespace Hands
         
         private void SelectEntered(SelectEnterEventArgs arg0)
         {
+            if (arg0.interactableObject is BaseTeleportationInteractable) return;
            _handRigidBody.gameObject.SetActive(false);
            _configurableJoint.connectedBody = null;
            CancelInvoke(nameof(ShowHand));
@@ -29,6 +30,7 @@ namespace Hands
 
         private void SelectExited(SelectEnterEventArgs arg0)
         {
+            if (arg0.interactableObject is BaseTeleportationInteractable) return;
             Invoke(nameof(ShowHand),_handShowDelay);
         }
 
