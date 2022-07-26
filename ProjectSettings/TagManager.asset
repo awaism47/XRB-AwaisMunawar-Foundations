@@ -9,6 +9,7 @@ TagManager:
   - Stickable
   - Enemy
   - KeyCard
+  - Blade
   layers:
   - Default
   - TransparentFX

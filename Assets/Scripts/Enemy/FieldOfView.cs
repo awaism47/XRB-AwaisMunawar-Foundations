@@ -60,7 +60,7 @@ public class FieldOfView : MonoBehaviour
             
         }
     }
-
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Handles.color = _gizmoColor;
@@ -73,4 +73,5 @@ public class FieldOfView : MonoBehaviour
         Handles.DrawLine(transform.position,transform.position+(lineA*_viewRadius));
         Handles.DrawLine(transform.position,transform.position+(lineB*_viewRadius));
     }
+    #endif
 }

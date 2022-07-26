@@ -1403,6 +1403,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6819638921158985387}
     m_Modifications:
+    - target: {fileID: 751484747, guid: 79ddf08e72a27da438c30cf9dd1588ac, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 751484747, guid: 79ddf08e72a27da438c30cf9dd1588ac, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 751484747, guid: 79ddf08e72a27da438c30cf9dd1588ac, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 751484747, guid: 79ddf08e72a27da438c30cf9dd1588ac, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 751484747, guid: 79ddf08e72a27da438c30cf9dd1588ac, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 751484747, guid: 79ddf08e72a27da438c30cf9dd1588ac, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 751484748, guid: 79ddf08e72a27da438c30cf9dd1588ac, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -1495,6 +1519,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6819638921158985387}
     m_Modifications:
+    - target: {fileID: 202259037, guid: 24fc660b7967a5948be7529931051fcc, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 202259037, guid: 24fc660b7967a5948be7529931051fcc, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 202259037, guid: 24fc660b7967a5948be7529931051fcc, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 202259037, guid: 24fc660b7967a5948be7529931051fcc, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 202259037, guid: 24fc660b7967a5948be7529931051fcc, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 202259037, guid: 24fc660b7967a5948be7529931051fcc, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 202259038, guid: 24fc660b7967a5948be7529931051fcc, type: 3}
       propertyPath: m_InteractionManager
       value: 
