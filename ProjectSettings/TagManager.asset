@@ -9,6 +9,7 @@ TagManager:
   - Stickable
   - Enemy
   - KeyCard
+  - Ammo
   layers:
   - Default
   - TransparentFX
