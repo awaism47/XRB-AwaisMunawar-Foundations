@@ -31,7 +31,7 @@ public class DoorKeyCardTrigger : DoorTrigger
 
     private void KeyCardInserted(SelectEnterEventArgs arg0)
     {
-        if (!arg0.interactableObject.transform.TryGetComponent(out KeyCard keycard))
+        if (!arg0.interactable.transform.TryGetComponent(out KeyCard keycard))
         {
             Debug.Log("No keycard component attached to inserted object");
             SetLightColor(_errorColor);

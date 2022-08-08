@@ -21,7 +21,7 @@ namespace Hands
         private void MoveSelectionToMainController(SelectEnterEventArgs arg0)
         {
             
-            IXRSelectInteractable interactable = arg0.interactableObject;
+            XRBaseInteractable interactable = arg0.interactable;
             if(interactable is BaseTeleportationInteractable) return;
             if(interactable.isSelected) _teleportController.interactionManager.SelectEnter(_mainController,interactable);
         }

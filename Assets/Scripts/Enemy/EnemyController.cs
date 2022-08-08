@@ -10,7 +10,8 @@ public class EnemyController : MonoBehaviour
     enum EnemyState
     {
         Patrol=0,
-        Investigate=1
+        Investigate=1,
+        Stunned=2
     }
     
     [SerializeField] private NavMeshAgent _agent;
@@ -20,6 +21,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private PatrolRoute _patrolRoute;
     [SerializeField] private FieldOfView _fov;
     [SerializeField] private EnemyState _state = EnemyState.Patrol;
+    [SerializeField] private float _stunnedTime = 3f;
 
     public UnityEvent<Transform> onPlayerFound;
     public UnityEvent onInvestigate;
@@ -33,6 +35,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 _investigationPoint;
     private float _waitTimer = 0f;
     private bool _playerFound = false;
+    private float _stunnedTimer = 0f;
     
     // Start is called before the first frame update
     void Start()
@@ -56,8 +59,25 @@ public class EnemyController : MonoBehaviour
         else if(_state==EnemyState.Investigate)
         {
             UpdateInvestigate();
+        } else if (_state == EnemyState.Stunned)
+        {
+            _stunnedTimer += Time.deltaTime;
+            if (_stunnedTimer >= _stunnedTime)
+            {
+                _state = EnemyState.Patrol;
+                _animator.SetBool("Stunned",false);
+            }
+
         }
         
+    }
+
+    public void SetStunned()
+    {
+        _animator.SetBool("Stunned",true);
+        _stunnedTimer = 0f;
+        _state = EnemyState.Stunned;
+        _agent.SetDestination(transform.position);
     }
 
     public void InvestigatePoint(Vector3 investigationPoint)

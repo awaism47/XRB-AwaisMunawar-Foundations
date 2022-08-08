@@ -6,11 +6,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XRTagLimitedSocketInteractor : XRSocketInteractor
 {
     public string interactableTag;
-    public override bool CanSelect(IXRSelectInteractable interactable)
+    public override bool CanSelect(XRBaseInteractable interactable)
     {
         return base.CanSelect(interactable) && interactable.transform.CompareTag(interactableTag);
     }
-    public override bool CanHover(IXRHoverInteractable interactable)
+    public override bool CanHover(XRBaseInteractable interactable)
     {
         return base.CanHover(interactable) && interactable.transform.CompareTag(interactableTag);
     }

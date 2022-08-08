@@ -8,6 +8,7 @@ namespace Hands
         [SerializeField] private XRBaseControllerInteractor _controller;
         [SerializeField] private Rigidbody _handRigidBody;
         [SerializeField] private float _handShowDelay = 0.15f;
+        [SerializeField] private GameObject _hands;
 
         [SerializeField] private ConfigurableJoint _configurableJoint;
 
@@ -22,16 +23,20 @@ namespace Hands
         
         private void SelectEntered(SelectEnterEventArgs arg0)
         {
-            if (arg0.interactableObject is BaseTeleportationInteractable) return;
+            Debug.Log((arg0.interactable.transform.name));
+           // if (arg0.interactableObject is BaseTeleportationInteractable) return;
+
            _handRigidBody.gameObject.SetActive(false);
-           _configurableJoint.connectedBody = null;
-           CancelInvoke(nameof(ShowHand));
+           _hands.SetActive(false);
+           
+           _configurableJoint.connectedBody = null; //CancelInvoke(nameof(ShowHand));
         }
 
         private void SelectExited(SelectEnterEventArgs arg0)
         {
-            if (arg0.interactableObject is BaseTeleportationInteractable) return;
-            Invoke(nameof(ShowHand),_handShowDelay);
+            if (arg0.interactable is BaseTeleportationInteractable) return;
+           // Invoke(nameof(ShowHand),_handShowDelay);
+           ShowHand();
         }
 
         private void ShowHand()
