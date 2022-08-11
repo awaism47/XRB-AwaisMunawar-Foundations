@@ -53,17 +53,17 @@ namespace Weapons
 
         protected virtual  void AmmoRemoved(SelectExitEventArgs arg0)
         {
-           // IgnoreCollision(arg0.interactable,false);
+            IgnoreCollision(arg0.interactable,false);
             _ammoClip = null;
         }
 
         protected virtual void AmmoAttached(SelectEnterEventArgs arg0)
         {
-           // IgnoreCollision(arg0.interactable,true);
+            IgnoreCollision(arg0.interactable,true);
             _ammoClip = arg0.interactable.transform.GetComponent<Ammo>();
         }
 
-       /* private void IgnoreCollision(IXRInteractable interactable, bool ignore)
+       private void IgnoreCollision(XRBaseInteractable interactable, bool ignore)
         {
             Collider[] myColliders = GetComponentsInChildren<Collider>();
             foreach (Collider myCollider in myColliders)
@@ -75,7 +75,7 @@ namespace Weapons
                 }
                 
             }
-        }*/
+        }
 
    
     }

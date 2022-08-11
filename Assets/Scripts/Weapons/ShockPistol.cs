@@ -6,17 +6,20 @@ namespace Weapons
 {
     public class ShockPistol : Gun
     {
-        [SerializeField] private Renderer[] _gunRenderer;
+        [SerializeField] private Renderer[] _gunRenderers;
         [SerializeField] private Material[] _ammoScreenMaterials;
 
 
         protected override void Start()
         {
+            base.Start();
+            Assert.IsNotNull(_gunRenderers,"You have not assigned a renderer to gun"+name);
+            Assert.IsNotNull(_ammoScreenMaterials,"You have not ammo materials to gun"+name);
+            
             var activeAmmoSocket = GetComponentInChildren<XRTagLimitedSocketInteractor>();
             _ammoSocket = activeAmmoSocket;
-            base.Start();
-            Assert.IsNotNull(_gunRenderer,"You have not assigned a renderer to gun"+name);
-            Assert.IsNotNull(_ammoScreenMaterials,"You have not ammo materials to gun"+name);
+            
+       
             
         }
 
@@ -58,14 +61,15 @@ namespace Weapons
 
         private void AssignScreenMaterial(Material newMaterial)
         {
-            foreach (var rend in _gunRenderer)
+            foreach (Renderer rend in _gunRenderers)
             {
-                if(rend.gameObject.activeSelf) continue;
+                if(!rend.gameObject.activeSelf) continue;
                 Material[] mats = rend.materials;
                 mats[1] = newMaterial;
                 rend.materials = mats;
             }
-           
+            
+
         }
     }
 }

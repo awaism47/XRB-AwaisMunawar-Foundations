@@ -8,7 +8,7 @@ namespace Hands
         [SerializeField] private XRBaseControllerInteractor _controller;
         [SerializeField] private Rigidbody _handRigidBody;
         [SerializeField] private float _handShowDelay = 0.15f;
-        [SerializeField] private GameObject _hands;
+        [SerializeField] private GameObject _hand;
 
         [SerializeField] private ConfigurableJoint _configurableJoint;
 
@@ -27,7 +27,7 @@ namespace Hands
            // if (arg0.interactableObject is BaseTeleportationInteractable) return;
 
            _handRigidBody.gameObject.SetActive(false);
-           _hands.SetActive(false);
+           _hand.SetActive(false);
            
            _configurableJoint.connectedBody = null; //CancelInvoke(nameof(ShowHand));
         }
